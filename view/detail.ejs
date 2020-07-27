@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet"href="../style.css">
+
+</head>
+<body>
+   <header>
+
+
+   </header> 
+   <main>
+       <div class="container">
+           <%digimon.forEach(data=>{%>
+            <div class="card">
+                <h1>
+                     <%=data.digimon_name%>
+
+                </h1>
+                <img src="<%=data.digimon_img%>">
+                <p><%=data.digimon_level%></p>
+               
+                    <ahref="/detail/<%=data.id%>">ShowDetail</a>
+                    <form action="/update/<%=digimon.id%>"method="POST">
+                        <input type="text"name="digimon_name"value="<%digimon.digimon_name%>">
+                        <input type="text"name="digimon_img"value="<%digimon.digimon_img%>">
+                        <input type="text"name="digimon_level"value="<%digimon.digimon_level%>">
+                        <button>
+                            update
+                </button>
+                    </form>
+                    <form action="/delete/<%=digimon.id%>"method="POST">
+                        <button>
+                            delete
+                </button>
+                </form>>
+            </div>
+        
+       </div>
+   </main>
+   <footer>
+       
+   </footer>
+</body>
+</html>
